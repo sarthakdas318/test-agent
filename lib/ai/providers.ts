@@ -10,11 +10,11 @@ const naraProvider = createOpenAI({
 
 export const myProvider = isTestEnvironment
   ? (() => {
-      const { chatModel, titleModel } = require("./models.mock");
+      // const { chatModel, titleModel } = require("./models.mock");
       return customProvider({
         languageModels: {
-          "chat-model": chatModel,
-          "title-model": titleModel,
+          "chat-model": "claude-sonnet-4-6" as any,
+          "title-model": "claude-sonnet-4-6" as any,
         },
       });
     })()
