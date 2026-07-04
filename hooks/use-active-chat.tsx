@@ -158,7 +158,14 @@ export function ActiveChatProvider({ children }: { children: ReactNode }) {
       mutate(unstable_serialize(getChatHistoryPaginationKey));
     },
     onError: (error) => {
-      if (error.message?.includes("AI Gateway requires a valid credit card")) {
+      if (
+        error.message?.includes("AI Gateway requires a valid credit card") ||
+        error.message?.includes("NARA_API_KEY") ||
+        error.message?.includes("invalid api key") ||
+        error.message?.includes("Unauthorized") ||
+        (error as { status?: number })?.status === 401 ||
+        (error as { status?: number })?.status === 402
+      ) {
         setShowCreditCardAlert(true);
       } else if (error instanceof ChatbotError) {
         toast({ type: "error", description: error.message });

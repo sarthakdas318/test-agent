@@ -177,25 +177,25 @@ export function ChatShell() {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Activate AI Gateway</AlertDialogTitle>
+            <AlertDialogTitle>API Access Required</AlertDialogTitle>
             <AlertDialogDescription>
-              This application requires{" "}
-              {process.env.NODE_ENV === "production" ? "the owner" : "you"} to
-              activate Vercel AI Gateway.
+              This application requires a valid Nara API key to access AI
+              models. Please ensure the{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs">
+                NARA_API_KEY
+              </code>{" "}
+              environment variable is configured.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => {
-                window.open(
-                  "https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card",
-                  "_blank"
-                );
+                window.open("https://router.bynara.id", "_blank");
                 window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`;
               }}
             >
-              Activate
+              Get API Key
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
