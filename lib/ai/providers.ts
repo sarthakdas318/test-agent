@@ -4,8 +4,8 @@ import { isTestEnvironment } from "../constants";
 import { titleModel } from "./models";
 
 const naraProvider = createOpenAI({
-  baseURL: "https://router.bynara.id/v1",
-  apiKey: process.env.NARA_API_KEY ?? "",
+  baseURL: "https://api.puter.com/puterai/openai/v1",
+  apiKey: process.env.PUTER_AUTH_TOKEN,
 });
 
 export const myProvider = isTestEnvironment
