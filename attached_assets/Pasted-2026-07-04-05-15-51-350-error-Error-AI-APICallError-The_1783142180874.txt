@@ -1,0 +1,72 @@
+2026-07-04 05:15:51.350 [error] Error [AI_APICallError]: The requested endpoint does not exist.
+    at ms.errorSchema (.next/server/chunks/_0.myzll._.js:58:17580)
+    at async mt (.next/server/chunks/_0.myzll._.js:58:14750)
+    at async f_.doStream (.next/server/chunks/_0.myzll._.js:68:66174)
+    at async fn (.next/server/chunks/_0.myzll._.js:52:27202)
+    at async (.next/server/chunks/_0.myzll._.js:50:1473)
+    at async dI (.next/server/chunks/_0.myzll._.js:50:5316)
+    at async E (.next/server/chunks/_0.myzll._.js:52:26353)
+    at async fn (.next/server/chunks/_0.myzll._.js:52:34898)
+    at async (.next/server/chunks/_0.myzll._.js:50:1473) {
+  cause: undefined,
+  url: 'https://router.bynara.id/v1/responses',
+  requestBodyValues: {
+    model: 'mistral-large',
+    input: [ [Object], [Object] ],
+    temperature: undefined,
+    top_p: undefined,
+    max_output_tokens: undefined,
+    conversation: undefined,
+    max_tool_calls: undefined,
+    metadata: undefined,
+    parallel_tool_calls: undefined,
+    previous_response_id: undefined,
+    store: undefined,
+    user: undefined,
+    instructions: undefined,
+    service_tier: undefined,
+    include: undefined,
+    prompt_cache_key: undefined,
+    prompt_cache_retention: undefined,
+    safety_identifier: undefined,
+    top_logprobs: undefined,
+    truncation: undefined,
+    tools: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    tool_choice: 'auto',
+    stream: true
+  },
+  statusCode: 404,
+  responseHeaders: {
+    'alt-svc': 'h3=":443"; ma=86400',
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': 'a15ba7895e553f01-IAD',
+    connection: 'keep-alive',
+    'content-encoding': 'br',
+    'content-security-policy': "default-src 'none'; frame-ancestors 'none'",
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Sat, 04 Jul 2026 05:15:51 GMT',
+    nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+    'referrer-policy': 'no-referrer',
+    'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HyjJko1ZAhWClxgag2SzDAaKmsWFFBQ7EAsLJ3DaGzbj5ia8B71zLHme14XXN807fkE7%2BbCMEX9l7fZOQYPIlPE49X10SACRQNG6z4sSlaw62BtWJUZvPUO%2BHyf1DGSvND9k"}]}',
+    server: 'cloudflare',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains',
+    'transfer-encoding': 'chunked',
+    via: '1.1 Caddy, 1.1 Caddy',
+    'x-content-type-options': 'nosniff',
+    'x-frame-options': 'DENY',
+    'x-request-id': '8058b6dc-9b2c-4001-9b10-ea3085371d29'
+  },
+  responseBody: '{"error":{"type":"not_found","message":"The requested endpoint does not exist.","request_id":"8058b6dc-9b2c-4001-9b10-ea3085371d29"}}\n',
+  isRetryable: false,
+  data: {
+    error: {
+      message: 'The requested endpoint does not exist.',
+      type: 'not_found'
+    }
+  }
+}

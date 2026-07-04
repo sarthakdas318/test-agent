@@ -6,6 +6,7 @@ import { titleModel } from "./models";
 const naraProvider = createOpenAI({
   baseURL: "https://router.bynara.id/v1",
   apiKey: process.env.NARA_API_KEY ?? "",
+  compatibility: "compatible",
 });
 
 export const myProvider = isTestEnvironment
