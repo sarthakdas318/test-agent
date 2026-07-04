@@ -1,6 +1,12 @@
-import { customProvider, gateway } from "ai";
+import { createOpenAI } from "@ai-sdk/openai";
+import { customProvider } from "ai";
 import { isTestEnvironment } from "../constants";
 import { titleModel } from "./models";
+
+const naraProvider = createOpenAI({
+  baseURL: "https://router.bynara.id/v1",
+  apiKey: process.env.NARA_API_KEY ?? "",
+});
 
 export const myProvider = isTestEnvironment
   ? (() => {
@@ -19,12 +25,12 @@ export function getLanguageModel(modelId: string) {
     return myProvider.languageModel(modelId);
   }
 
-  return gateway.languageModel(modelId);
+  return naraProvider(modelId);
 }
 
 export function getTitleModel() {
   if (isTestEnvironment && myProvider) {
     return myProvider.languageModel("title-model");
   }
-  return gateway.languageModel(titleModel.id);
+  return naraProvider(titleModel.id);
 }
